@@ -1,0 +1,147 @@
+#%RAML 1.0
+title: BookMyHoliday
+/flights:
+  get:
+    queryParameters:
+      source:
+        type: string
+        required: true
+      destination:
+        type: string
+        required: true
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {"message":"Hello user"}
+  post:
+    body:
+      application/json:
+            properties:
+              flightId:
+                required: true
+              NoOfpassenger:
+                required: true
+              classType:
+                required: true
+                type: string
+                enum:
+                  - ECONOMY
+                  - BUSINESS
+              Origin:
+                required: true
+              Destination:
+                required: true
+              TravelDate:
+                required: true
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {"message":"successful"}
+  delete:
+    queryParameters:
+      id:
+        type: string
+        required: true
+    responses:
+      200:
+        body:
+          application/json:
+            example: "deletedsuccessful"
+            
+          
+/car:
+  get:
+    queryParameters:
+      source:
+        type: string
+        required: true
+      destination:
+        type: string
+        required: true
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {"message":"Hello user"}
+  post:
+    body:
+      application/json:
+            properties:
+              Origin:
+                required: true
+              Destination:
+                required: true
+              TravelDate:
+                required: true
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {"message":"successful"}
+  delete:
+    queryParameters:
+      id:
+        type: string
+        required: true
+    responses:
+      200:
+        body:
+          application/json:
+            example: "deleted successful"
+/Hotel:
+  get:
+    queryParameters:
+      location:
+        type: string
+        required: true
+      checkin_date:
+        type: string
+        required: true
+      checkout_date:
+          type: string
+          required: true
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {"message":"successful"}
+  post:
+    body:
+      application/json:
+            properties:
+              name:
+                type: string
+                required: true
+
+              checkin_date:
+                  type: string
+                  required: true
+              checkout_date:
+                  type: string
+                  required: true
+            
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {"message":"successful"}
+  delete:
+    queryParameters:
+      id:
+        type: string
+        required: true
+    responses:
+      200:
+        body:
+          application/json:
+            example: "deleted successful"
+
+            
